@@ -39,72 +39,70 @@ class _ExampleHomePageState extends State<ExampleHomePage>
     CardController controller; //Use this to trigger swap.
 
     return Scaffold(
-        backgroundColor: Colors.black45,
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          title: Text('Tinder like CARDS',style: TextStyle(color: Colors.redAccent),),
+      backgroundColor: Colors.black45,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        title: Text(
+          'Tinder like CARDS',
+          style: TextStyle(color: Colors.redAccent),
         ),
-        body:  Container(
-            height: MediaQuery.of(context).size.height * 0.7,
-            child:TinderSwapCard(
-                 orientation: AmassOrientation.BOTTOM,
-                 totalNum: 6,
-              stackNum: 4,
-              swipeEdge: 4.0,
-              maxWidth: MediaQuery.of(context).size.width * 0.9,
-              maxHeight: MediaQuery.of(context).size.width * 0.9,
-              minWidth: MediaQuery.of(context).size.width * 0.8,
-              minHeight: MediaQuery.of(context).size.width * 0.8,
-              cardBuilder: (context, index) => Card(
-                child: Image.asset('${welcomeImages[index]}'),
-              ) ,
-              cardController: controller = CardController(),
-              swipeUpdateCallback:
-                  (DragUpdateDetails details, Alignment align){
-                   if(align.x < 0){
-
-                   }else if (align.x > 0){
-                   }
-              },
-              swipeCompleteCallback:
-              (CardSwipeOrientation orientaion , int index){
-
-              },
-            )),
-        bottomNavigationBar: CurvedNavigationBar(
-          color: Colors.white,
-          backgroundColor: Colors.transparent,
-          buttonBackgroundColor: Colors.white,
-          height: 70.0,
-          items: <Widget>[
-            Icon(
-              Icons.home,
-              size: 30.0,
-              color: Colors.redAccent,
+      ),
+      body: Container(
+          height: MediaQuery.of(context).size.height * 0.7,
+          child: TinderSwapCard(
+            orientation: AmassOrientation.BOTTOM,
+            totalNum: 6,
+            stackNum: 4,
+            swipeEdge: 4.0,
+            maxWidth: MediaQuery.of(context).size.width * 0.9,
+            maxHeight: MediaQuery.of(context).size.width * 0.9,
+            minWidth: MediaQuery.of(context).size.width * 0.8,
+            minHeight: MediaQuery.of(context).size.width * 0.8,
+            cardBuilder: (context, index) => Card(
+              child: Image.asset('${welcomeImages[index]}'),
             ),
-            Icon(
-              Icons.chat_bubble,
-              size: 30.0,
-              color: Colors.redAccent,
-            ),
-            Icon(
+            cardController: controller = CardController(),
+            swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
+              if (align.x < 0) {
+              } else if (align.x > 0) {}
+            },
+            swipeCompleteCallback:
+                (CardSwipeOrientation orientaion, int index) {},
+          )),
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Colors.white,
+        backgroundColor: Colors.transparent,
+        buttonBackgroundColor: Colors.white,
+        height: 70.0,
+        items: <Widget>[
+          Icon(
+            Icons.home,
+            size: 30.0,
+            color: Colors.blue,
+          ),
+          Icon(
+            Icons.chat_bubble,
+            size: 30.0,
+            color: Colors.blue,
+          ),
+          Icon(
             FontAwesomeIcons.heart,
-              size: 30.0,
-              color: Colors.redAccent,
-            ),
-            Icon(
-              Icons.directions_bike,
-              size: 30.0,
-              color: Colors.redAccent,
-            ),
-            Icon(
-              Icons.location_on,
-              size: 30.0,
-              color: Colors.redAccent,
-            ),
-          ],
-        ),
-      );
+            size: 30.0,
+            color: Colors.blue,
+          ),
+          Icon(
+            Icons.directions_bike,
+            size: 30.0,
+            color: Colors.blue,
+          ),
+          Icon(
+            Icons.airplanemode_active,
+            size: 30.0,
+            color: Colors.blue,
+          ),
+        ],
+      ),
+    );
   }
 }
